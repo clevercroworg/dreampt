@@ -30,9 +30,11 @@ const ContactInfo = [
       </svg>
     ),
     label: 'Call Us',
-    value: '+91 80000 00000',
+    values: [
+      { text: '+91 99006 24945', href: 'tel:+919900624945' },
+      { text: '+91 94804 12213', href: 'tel:+919480412213' }
+    ],
     sub: 'Mon – Sat, 9am – 6pm IST',
-    href: 'tel:+918000000000',
   },
   {
     icon: (
@@ -303,7 +305,19 @@ const Contact = () => {
                       <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#94a3b8] mb-1">
                         {item.label}
                       </p>
-                      {item.href ? (
+                      {item.values ? (
+                        <div className="flex flex-col gap-1">
+                          {item.values.map((v, idx) => (
+                            <a
+                              key={idx}
+                              href={v.href}
+                              className="font-heading font-extrabold text-brand-ink text-lg leading-tight hover:text-brand-orange transition-colors"
+                            >
+                              {v.text}
+                            </a>
+                          ))}
+                        </div>
+                      ) : item.href ? (
                         <a
                           href={item.href}
                           target={item.href.startsWith('http') ? '_blank' : undefined}

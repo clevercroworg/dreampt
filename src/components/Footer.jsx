@@ -58,7 +58,8 @@ const Footer = () => {
             <h3 className="footer-title">Contact</h3>
             <div className="footer-links">
               <a href="mailto:info@dreampt.in">info@dreampt.in</a>
-              <a href="tel:+918000000000">+91 80000 00000</a>
+              <a href="tel:+919900624945">+91 99006 24945</a>
+              <a href="tel:+919480412213">+91 94804 12213</a>
               <p>No.1, 3rd Cross, 3rd Main, 2nd Stage, Yeshwanthapur, Gorguntepalya, Bangalore - 560022, Karnataka, India.</p>
               <a href="/#contact">Request a Free Consultation</a>
             </div>

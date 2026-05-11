@@ -13,9 +13,7 @@ const Footer = () => {
               industrial technology support with a structured, practical approach.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/dreampt-mecha-system-pvt-ltd/" target="_blank" rel="noopener noreferrer" className="social-link" style={{backgroundColor: "rgba(255,255,255,0.05)"}} aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A2 2 0 1 0 5.3 7a2 2 0 0 0-.05-4ZM20.44 12.48c0-3.45-1.84-5.05-4.3-5.05a3.74 3.74 0 0 0-3.38 1.86V8.5H9.38c.04.52 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.68.9-1.39 1.96-1.39 1.38 0 1.93 1.05 1.93 2.59V20h3.38v-7.52Z" /></svg>
-              </a>
+              <img src="/certificate/iso-9001-compliance.webp" alt="ISO 9001 Compliance" className="h-16 w-auto" />
             </div>
           </div>
 
@@ -68,7 +66,11 @@ const Footer = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-slate-400">
           <p>Copyright © 2026 DReAMPT Mecha System Pvt. Ltd. All rights reserved.</p>
-          <img src="/certificate/iso-9001-compliance.webp" alt="ISO 9001 Compliance" className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <div className="flex items-center gap-3">
+            <a href="https://www.linkedin.com/company/dreampt-mecha-system-pvt-ltd/" target="_blank" rel="noopener noreferrer" className="social-link" style={{backgroundColor: "rgba(255,255,255,0.05)"}} aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A2 2 0 1 0 5.3 7a2 2 0 0 0-.05-4ZM20.44 12.48c0-3.45-1.84-5.05-4.3-5.05a3.74 3.74 0 0 0-3.38 1.86V8.5H9.38c.04.52 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.68.9-1.39 1.96-1.39 1.38 0 1.93 1.05 1.93 2.59V20h3.38v-7.52Z" /></svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

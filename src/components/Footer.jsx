@@ -66,8 +66,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 py-6 text-sm text-slate-400">
-          Copyright © 2026 DReAMPT Mecha System Pvt. Ltd. All rights reserved.
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-slate-400">
+          <p>Copyright © 2026 DReAMPT Mecha System Pvt. Ltd. All rights reserved.</p>
+          <img src="/certificate/iso-9001-compliance.webp" alt="ISO 9001 Compliance" className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </footer>

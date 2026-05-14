@@ -48,11 +48,14 @@ const Header = () => {
 
   return (
     <header id="site-header" ref={headerRef} className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isSticky ? 'is-sticky' : ''}`}>
-      <div className="topbar-shell">
+      <div className="topbar-shell relative">
         <div className="flex items-center justify-between gap-4 px-6 py-2 lg:px-8">
           <div className="flex items-center gap-3">
             <img src="/images/Cimatron_Portrait_logo_black.png" alt="Cimatron logo" className="h-7 w-auto" />
-            <p className="truncate text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
+          </div>
+          
+          <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap">
               Authorised Reseller - ISO 9001:2015
             </p>
           </div>

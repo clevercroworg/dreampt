@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Reveal from '../components/Reveal';
+
+/* ── EmailJS credentials (from .env) ────────────────────────────── */
+const EMAILJS_SERVICE  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactInfo = [
   {
@@ -60,19 +66,77 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    // Clear field error on change
+    if (fieldErrors[e.target.name]) {
+      setFieldErrors((prev) => {
+        const copy = { ...prev };
+        delete copy[e.target.name];
+        return copy;
+      });
+    }
+    if (error) setError('');
   };
 
-  const handleSubmit = (e) => {
+  /* ── Client-side validation ──────────────────────────────────── */
+  const validate = () => {
+    const errs = {};
+    if (!form.name.trim()) errs.name = 'Name is required';
+    if (!form.email.trim()) {
+      errs.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      errs.email = 'Please enter a valid email address';
+    }
+    if (!form.message.trim()) errs.message = 'Message is required';
+    setFieldErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  /* ── Form submission ─────────────────────────────────────────── */
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) return;
+
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    setError('');
+
+    try {
+      // Check if EmailJS is configured
+      if (!EMAILJS_SERVICE || !EMAILJS_TEMPLATE || !EMAILJS_KEY) {
+        console.warn(
+          'EmailJS is not configured. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to your .env file.'
+        );
+        // Fallback: still show success in development so the UI works
+        await new Promise((r) => setTimeout(r, 1200));
+        setSubmitted(true);
+        setLoading(false);
+        return;
+      }
+
+      const templateParams = {
+        name: form.name.trim(),
+        company: form.company.trim() || 'Not provided',
+        email: form.email.trim(),
+        phone: form.phone.trim() || 'Not provided',
+        interest: form.interest || 'Not specified',
+        message: form.message.trim(),
+      };
+
+      await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, templateParams, EMAILJS_KEY);
+
       setSubmitted(true);
-    }, 1400);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setError(
+        'Something went wrong while sending your message. Please try again or email us directly at info@dreampt.in.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -141,7 +205,7 @@ const Contact = () => {
                       Thank you for reaching out. Our team will get back to you within 24 hours.
                     </p>
                     <button
-                      onClick={() => { setSubmitted(false); setForm({ name:'',company:'',email:'',phone:'',interest:'',message:'' }); }}
+                      onClick={() => { setSubmitted(false); setError(''); setFieldErrors({}); setForm({ name:'',company:'',email:'',phone:'',interest:'',message:'' }); }}
                       className="btn-primary mt-2"
                     >
                       Send Another Message
@@ -172,8 +236,9 @@ const Contact = () => {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="John Smith"
-                            className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20"
+                            className={`w-full rounded-xl border bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 ${fieldErrors.name ? 'border-red-400' : 'border-slate-200'}`}
                           />
+                          {fieldErrors.name && <p className="text-red-500 text-xs font-medium mt-1">{fieldErrors.name}</p>}
                         </div>
                         <div>
                           <label htmlFor="company" className="block text-sm font-semibold text-brand-ink mb-2">
@@ -204,8 +269,9 @@ const Contact = () => {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="john@company.com"
-                            className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20"
+                            className={`w-full rounded-xl border bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 ${fieldErrors.email ? 'border-red-400' : 'border-slate-200'}`}
                           />
+                          {fieldErrors.email && <p className="text-red-500 text-xs font-medium mt-1">{fieldErrors.email}</p>}
                         </div>
                         <div>
                           <label htmlFor="phone" className="block text-sm font-semibold text-brand-ink mb-2">
@@ -256,9 +322,20 @@ const Contact = () => {
                           value={form.message}
                           onChange={handleChange}
                           placeholder="Tell us about your project or questions…"
-                          className="w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 resize-none"
+                          className={`w-full rounded-xl border bg-[#f8fafc] px-4 py-3 text-sm font-medium text-brand-ink placeholder-slate-400 outline-none transition focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 resize-none ${fieldErrors.message ? 'border-red-400' : 'border-slate-200'}`}
                         />
+                        {fieldErrors.message && <p className="text-red-500 text-xs font-medium mt-1">{fieldErrors.message}</p>}
                       </div>
+
+                      {/* ── Error Banner ──────────────────────── */}
+                      {error && (
+                        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 flex items-start gap-3">
+                          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-red-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z" />
+                          </svg>
+                          <p className="text-sm font-medium text-red-700">{error}</p>
+                        </div>
+                      )}
 
                       <button
                         id="contact-submit"

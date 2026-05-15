@@ -54,37 +54,37 @@ const TrustStrip = () => {
             
             <article className="stats-ref-item px-6 py-8 sm:py-4 flex flex-col items-center text-center">
               <p className="stats-ref-value text-5xl font-extrabold tracking-tight text-slate-900 leading-none mb-4 md:text-6xl">
-                <Counter endValue={6000} suffix="+" />
+                <Counter endValue={60} suffix="+" />
               </p>
               <p className="stats-ref-label text-sm font-semibold uppercase tracking-wider text-slate-500 max-w-[180px]">
-                Hours of Curated Learning
+                Customers
               </p>
             </article>
 
             <article className="stats-ref-item px-6 py-8 sm:py-4 flex flex-col items-center text-center">
               <p className="stats-ref-value text-5xl font-extrabold tracking-tight text-slate-900 leading-none mb-4 md:text-6xl">
-                <Counter endValue={1250} suffix="+" />
+                <Counter endValue={200} suffix="+" />
               </p>
               <p className="stats-ref-label text-sm font-semibold uppercase tracking-wider text-slate-500 max-w-[180px]">
-                Industry Experts to Customize Training
+                Enquiries
               </p>
             </article>
 
             <article className="stats-ref-item px-6 py-8 sm:py-4 flex flex-col items-center text-center">
               <p className="stats-ref-value text-5xl font-extrabold tracking-tight text-slate-900 leading-none mb-4 md:text-6xl">
-                <Counter endValue={80} />
+                <Counter endValue={50} suffix="+" />
               </p>
               <p className="stats-ref-label text-sm font-semibold uppercase tracking-wider text-slate-500 max-w-[180px]">
-                Net Promoter Score Across All Touch Points
+                Projects Completed
               </p>
             </article>
 
             <article className="stats-ref-item px-6 py-8 sm:py-4 flex flex-col items-center text-center border-b-0">
               <p className="stats-ref-value text-5xl font-extrabold tracking-tight text-slate-900 leading-none mb-4 md:text-6xl">
-                <Counter endValue={10000} suffix="+" />
+                <Counter endValue={250} suffix="+" />
               </p>
               <p className="stats-ref-label text-sm font-semibold uppercase tracking-wider text-slate-500 max-w-[180px]">
-                Engineers Up-skilled Across Domains
+                Successful Solutions
               </p>
             </article>
 

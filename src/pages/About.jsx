@@ -19,7 +19,7 @@ const About = () => {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
             <p className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-brand-orange border border-brand-orange/30 bg-brand-orange/10">
-              ORGANIZATION: DMS20230001
+              ORGANIZATION
             </p>
           </Reveal>
           <Reveal delay={100}>

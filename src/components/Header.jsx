@@ -124,8 +124,6 @@ const Header = () => {
                 Resources <span className="dropdown-arrow">+</span>
               </button>
               <div className="dropdown-panel" role="menu">
-                <a href="/#resources" role="menuitem">Blog</a>
-                <a href="/#resources" role="menuitem">News &amp; Events</a>
                 <Link to="/case-studies" role="menuitem" onClick={() => setOpenDropdown(null)}>Case Study</Link>
               </div>
             </div>
@@ -177,8 +175,6 @@ const Header = () => {
             <details className="mobile-accordion">
               <summary>Resources <span className="dropdown-arrow">+</span></summary>
               <div className="mobile-submenu" onClick={() => setIsMobileMenuOpen(false)}>
-                <a href="/#resources">Blog</a>
-                <a href="/#resources">News &amp; Events</a>
                 <Link to="/case-studies">Case Study</Link>
               </div>
             </details>

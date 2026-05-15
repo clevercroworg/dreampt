@@ -44,11 +44,11 @@ const Footer = () => {
           <div>
             <h3 className="footer-title">Services</h3>
             <div className="footer-links">
-              <Link to="/services">Design Engineering</Link>
-              <Link to="/services">Design Validation</Link>
-              <Link to="/services">Manufacturing</Link>
-              <Link to="/services">Automation</Link>
-              <Link to="/services">Testing</Link>
+              <Link to="/services#design">Design Engineering</Link>
+              <Link to="/services#analysis">Design Validation</Link>
+              <Link to="/services#manufacturing">Manufacturing</Link>
+              <Link to="/services#prototyping">Automation</Link>
+              <Link to="/services#testing">Testing</Link>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ const Footer = () => {
               <a href="tel:+919900624945">+91 99006 24945</a>
               <a href="tel:+919480412213">+91 94804 12213</a>
               <p>No.1, 3rd Cross, 3rd Main, 2nd Stage, Yeshwanthapur, Gorguntepalya, Bangalore - 560022, Karnataka, India.</p>
-              <a href="/#contact">Request a Free Consultation</a>
+
             </div>
           </div>
         </div>

@@ -17,9 +17,12 @@ import CimatronDieQuote from './pages/CimatronDieQuote';
 import AltairInspireMold from './pages/AltairInspireMold';
 import AltairInspireForm from './pages/AltairInspireForm';
 import CaseStudies from './pages/CaseStudies';
+import useScrollToHash from './hooks/useScrollToHash';
 import './index.css';
 
 const App = () => {
+  useScrollToHash();
+
   return (
     <div className="page-shell relative overflow-hidden bg-white font-body text-brand-slate antialiased selection:bg-brand-orange/15">
       <div className="site-grid"></div>

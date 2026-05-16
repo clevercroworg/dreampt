@@ -50,15 +50,16 @@ const Header = () => {
     <header id="site-header" ref={headerRef} className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isSticky ? 'is-sticky' : ''}`}>
       <div className="topbar-shell relative">
         <div className="flex items-center justify-between gap-4 px-6 py-2 lg:px-8">
-          <div className="flex items-center gap-3">
-            <img src="/images/Cimatron_Portrait_logo_black.png" alt="Cimatron logo" className="h-7 w-auto" />
-          </div>
-          
-          <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap">
-              Authorised Reseller - ISO 9001:2015
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <img src="/images/Cimatron_Portrait_logo_black.png" alt="Cimatron logo" className="h-7 w-auto" />
+            </div>
+            <div className="hidden h-4 w-px bg-slate-300 lg:block"></div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-600 lg:text-xs lg:tracking-[0.2em]">
+              Authorised Reseller
             </p>
           </div>
+          
           <div className="flex items-center gap-2">
             <a href="https://www.linkedin.com/company/dreampt-mecha-system-pvt-ltd/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">

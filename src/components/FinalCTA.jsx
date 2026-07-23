@@ -16,7 +16,7 @@ const FinalCTA = () => {
                 Partner with DReAMPT for expert engineering guidance and seamless technical support.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="btn-primary justify-center">Request a Free Consultation</a>
+                <a href="#contact" className="btn-primary justify-center">Request a Demo Call</a>
                 <a href="#products" className="btn-secondary on-dark justify-center">Explore Products</a>
               </div>
             </div>

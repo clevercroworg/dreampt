@@ -215,7 +215,7 @@ const Contact = () => {
                   <>
                     <div className="mb-8">
                       <h2 className="font-heading text-2xl font-extrabold text-brand-ink mb-2">
-                        Request a Free Consultation
+                        Request a Demo Call
                       </h2>
                       <p className="text-[#64748b] font-medium text-sm">
                         Fill in the form and a DReAMPT expert will be in touch shortly.

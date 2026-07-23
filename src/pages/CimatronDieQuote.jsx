@@ -83,7 +83,7 @@ Developed to help stamping die manufacturers reach their full productive and com
             <Reveal delay={400}>
               <div className="mt-10 flex flex-wrap gap-5">
                 <a href="/#contact" className="btn-primary shadow-[0_8px_20px_rgb(242,106,33,0.3)] hover:shadow-[0_12px_25px_rgb(242,106,33,0.4)] text-base px-8 py-4">
-                  Request a Free Consultation
+                  Request a Demo Call
                 </a>
               </div>
             </Reveal>

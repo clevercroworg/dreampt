@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 
 const Industries = () => {
@@ -10,10 +11,10 @@ const Industries = () => {
           <h2 className="section-title">Industries We Serve</h2>
         </Reveal>
         <Reveal className="industry-pill-wrap mt-12">
-          <a href="#contact" className="industry-pill">Aerospace &amp; Defence</a>
-          <a href="#contact" className="industry-pill">Automotive</a>
-          <a href="#contact" className="industry-pill">General Engineering</a>
-          <a href="#contact" className="industry-pill">Communication</a>
+          <Link to="/contact" className="industry-pill">Aerospace &amp; Defence</Link>
+          <Link to="/contact" className="industry-pill">Automotive</Link>
+          <Link to="/contact" className="industry-pill">General Engineering</Link>
+          <Link to="/contact" className="industry-pill">Communication</Link>
         </Reveal>
       </div>
     </section>

@@ -66,16 +66,16 @@ const Header = () => {
                 <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A2 2 0 1 0 5.3 7a2 2 0 0 0-.05-4ZM20.44 12.48c0-3.45-1.84-5.05-4.3-5.05a3.74 3.74 0 0 0-3.38 1.86V8.5H9.38c.04.52 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.68.9-1.39 1.96-1.39 1.38 0 1.93 1.05 1.93 2.59V20h3.38v-7.52Z" />
               </svg>
             </a>
-            <a href="#" className="social-link" aria-label="Facebook">
+            <Link to="/contact" className="social-link" aria-label="Facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
                 <path d="M13.5 21v-8.1h2.73l.41-3.16H13.5V7.72c0-.91.25-1.53 1.56-1.53h1.67V3.37c-.29-.04-1.27-.12-2.41-.12-2.39 0-4.02 1.46-4.02 4.14v2.34H7.59v3.16h2.71V21h3.2Z" />
               </svg>
-            </a>
-            <a href="#" className="social-link" aria-label="Instagram">
+            </Link>
+            <Link to="/contact" className="social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
                 <path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3Zm0 1.5A3.25 3.25 0 0 0 4.5 7.75v8.5a3.25 3.25 0 0 0 3.25 3.25h8.5a3.25 3.25 0 0 0 3.25-3.25v-8.5A3.25 3.25 0 0 0 16.25 4.5h-8.5Zm8.88 1.13a1.12 1.12 0 1 1 0 2.24 1.12 1.12 0 0 1 0-2.24ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5Z" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 
 const FinalCTA = () => {
@@ -16,7 +17,7 @@ const FinalCTA = () => {
                 Partner with DReAMPT for expert engineering guidance and seamless technical support.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="btn-primary justify-center">Request a Demo Call</a>
+                <Link to="/contact" className="btn-primary justify-center">Request a Demo Call</Link>
                 <a href="#products" className="btn-secondary on-dark justify-center">Explore Products</a>
               </div>
             </div>

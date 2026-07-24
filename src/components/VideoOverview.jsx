@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 
 const VideoOverview = () => {
@@ -13,7 +14,7 @@ const VideoOverview = () => {
               Explore how Cimatron's advanced software transforms complex mold and die shop workflows with a Right-First-Time approach. As an Authorised Reseller, DReAMPT Mecha System brings you the technology, training, and strategic support to elevate your manufacturing capabilities.
             </p>
             <div className="mt-8 flex items-center gap-4">
-               <a href="#contact" className="btn-primary">Connect With Us</a>
+               <Link to="/contact" className="btn-primary">Connect With Us</Link>
             </div>
           </Reveal>
           

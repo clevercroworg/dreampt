@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 
 const Services = () => {
@@ -473,9 +474,9 @@ const Services = () => {
             <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Partner with a team that has managed complex projects for global giants like ISRO, DRDO, and BEL.
             </p>
-            <a href="/contact" className="inline-block bg-brand-orange hover:bg-brand-orange/90 text-white font-extrabold text-xl px-12 py-5 rounded-xl shadow-2xl transition-all hover:-translate-y-1">
+            <Link to="/contact" className="inline-block bg-brand-orange hover:bg-brand-orange/90 text-white font-extrabold text-xl px-12 py-5 rounded-xl shadow-2xl transition-all hover:-translate-y-1">
               Consult an Expert
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 
 const KeyBenefits = [
@@ -93,9 +94,9 @@ const AltairInspireForm = () => {
             </Reveal>
             <Reveal delay={400}>
               <div className="mt-10 flex flex-wrap gap-5">
-                <a href="/#contact" className="btn-primary shadow-[0_8px_20px_rgb(242,106,33,0.3)] hover:shadow-[0_12px_25px_rgb(242,106,33,0.4)] text-base px-8 py-4">
+                <Link to="/contact" className="btn-primary shadow-[0_8px_20px_rgb(242,106,33,0.3)] hover:shadow-[0_12px_25px_rgb(242,106,33,0.4)] text-base px-8 py-4">
                   Request a Demo Call
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>

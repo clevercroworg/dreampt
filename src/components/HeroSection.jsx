@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 
 const HeroSection = () => {
@@ -54,12 +55,12 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#contact" className="btn-primary hero-btn justify-center">
+            <Link to="/contact" className="btn-primary hero-btn justify-center">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
                 <path d="M4 5.75A1.75 1.75 0 0 1 5.75 4h12.5A1.75 1.75 0 0 1 20 5.75v12.5A1.75 1.75 0 0 1 18.25 20H5.75A1.75 1.75 0 0 1 4 18.25V5.75Zm2.75-.25a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V6.25a.75.75 0 0 0-.75-.75H6.75ZM8 9.25A.75.75 0 0 1 8.75 8.5h6.5a.75.75 0 0 1 0 1.5h-6.5A.75.75 0 0 1 8 9.25Zm0 5.5A.75.75 0 0 1 8.75 14h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z"/>
               </svg>
               Request a Demo Call
-            </a>
+            </Link>
             <a href="#products" className="btn-secondary on-dark hero-btn justify-center">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
                 <path d="M3.75 5A1.75 1.75 0 0 0 2 6.75v10.5C2 18.216 2.784 19 3.75 19h16.5A1.75 1.75 0 0 0 22 17.25V6.75A1.75 1.75 0 0 0 20.25 5H3.75Zm0 1.5h16.5a.25.25 0 0 1 .25.25v10.5a.25.25 0 0 1-.25.25H3.75a.25.25 0 0 1-.25-.25V6.75a.25.25 0 0 1 .25-.25Zm3 2.25A.75.75 0 0 1 7.5 8h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 3.5a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm0 3.5a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Z"/>
